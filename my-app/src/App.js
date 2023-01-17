@@ -15,15 +15,15 @@ const GlobalStyle = createGlobalStyle`
 const Crystal = keyframes`
 0% {
   rotate: 0deg;
-  background: linear-gradient(217deg, rgba(20,0,200,.8), rgba(0,0,0,0) 70.71%),
-  linear-gradient(127deg, rgba(255,255,255,1), rgba(80,80,255,0.2) 70.71%),
-  linear-gradient(336deg, rgba(70,110,255,.8), rgba(50,50,255,0.4) 70.71%);
+  background: linear-gradient(217deg, rgba(20,20,200,0.4), rgba(0,0,0,0) 70.71%),
+  linear-gradient(127deg, rgba(255,255,255,0.3), rgba(80,80,255,0.2) 70.71%),
+  linear-gradient(336deg, rgba(70,180,255,0.5), rgba(50,120,255,0.4) 70.71%);
   }
 100% {
   rotate: 360deg;
-  background: linear-gradient(217deg, rgba(20,0,200,.8), rgba(0,0,0,0) 70.71%),
-  linear-gradient(127deg, rgba(255,255,255,1), rgba(80,80,255,0.2) 70.71%),
-  linear-gradient(336deg, rgba(70,110,255,.8), rgba(50,50,255,0.4) 70.71%);
+  background: linear-gradient(217deg, rgba(20,20,200,0.4), rgba(0,0,0,0) 70.71%),
+  linear-gradient(127deg, rgba(255,255,255,0.3), rgba(80,80,255,0.2) 70.71%),
+  linear-gradient(336deg, rgba(70,180,255,0.5), rgba(50,120,255,0.4) 70.71%);
   }
 `;
 
