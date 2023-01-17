@@ -15,27 +15,45 @@ const GlobalStyle = createGlobalStyle`
 const Crystal = keyframes`
 0% {
   rotate: 0deg;
-  background: linear-gradient(217deg, rgba(20,20,200,0.4), rgba(0,0,0,0) 70.71%),
-  linear-gradient(127deg, rgba(255,255,255,0.3), rgba(80,80,255,0.2) 70.71%),
-  linear-gradient(336deg, rgba(70,180,255,0.5), rgba(50,120,255,0.4) 70.71%);
-  }
+  scale: 100%;
+}
+50% {
+  rotate: 180deg;
+  scale: 150%;
+}
 100% {
   rotate: 360deg;
-  background: linear-gradient(217deg, rgba(20,20,200,0.4), rgba(0,0,0,0) 70.71%),
-  linear-gradient(127deg, rgba(255,255,255,0.3), rgba(80,80,255,0.2) 70.71%),
-  linear-gradient(336deg, rgba(70,180,255,0.5), rgba(50,120,255,0.4) 70.71%);
-  }
+  scale: 100%;
+}
 `;
 
 const Light = keyframes`
 0% {
   scale: 100%;
   }
-  50% {
-  scale: 150%;
+50% {
+  scale: 160%;
   }
-  100% {
+100% {
   scale: 100%;
+  }
+`;
+
+const Spot = keyframes`
+0% {
+  top: 240px;
+  scale: 100%;
+  opacity: 1;
+  }
+50% {
+  top: 230px;
+  scale: 200%;
+  opacity: 0.5;
+  }
+100% {
+  top: 240px;
+  scale: 100%;
+  opacity: 1;
   }
 `;
 
@@ -46,7 +64,7 @@ const FlexWrapper = styled.div`
   min-width: 100vw;
   min-height: 15vh;
   position: fixed;
-  @media only screen and (max-height: 800px){
+  @media only screen and (max-height: 800px) {
     min-height: 20vh;
   }
 `;
@@ -65,9 +83,23 @@ const CrystalBall = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: cyan;
+  background: linear-gradient(
+      217deg,
+      rgba(20, 20, 200, 0.4),
+      rgba(0, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(
+      127deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(80, 80, 255, 0.2) 70.71%
+    ),
+    linear-gradient(
+      336deg,
+      rgba(70, 180, 255, 0.5),
+      rgba(50, 120, 255, 0.4) 70.71%
+    );
   animation-name: ${Crystal};
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 `;
@@ -78,9 +110,8 @@ const LightEffect = styled.div`
   height: 400px;
   margin-bottom: -200px;
   border-radius: 50%;
-  background-color: cyan ;
+  background-color: cyan;
   opacity: 0.2;
-  background-image: none;
   animation-name: ${Light};
   animation-duration: 4s;
   animation-iteration-count: infinite;
@@ -89,16 +120,19 @@ const LightEffect = styled.div`
 
 const HighLight = styled.div`
   margin: auto;
+  margin-top: 50px;
+  position: relative;
   width: 12px;
   height: 12px;
-  margin-top: 50px;
-  margin-bottom: -220px;
   padding-left: 20px;
   border-radius: 50%;
   background-color: white;
   opacity: 0.6;
-  background-image: none;
   z-index: 1;
+  animation-name: ${Spot};
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 `;
 
 export default function App() {
@@ -107,7 +141,7 @@ export default function App() {
       <GlobalStyle />
       <FlexWrapper>
         <HighLight />
-        <LightEffect/>
+        <LightEffect />
         <CrystalBall />
         <Character />
       </FlexWrapper>
